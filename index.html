@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="pt-BR" translate="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google" content="notranslate">
+<title>SIGCORJ — Sistema Integrado de Governança e Controle de Jornada</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3QgeD0iMTUiIHk9IjE1IiB3aWR0aD0iNzAiIGhlaWdodD0iNzAiIHJ4PSIxMiIgdHJhbnNmb3JtPSJyb3RhdGUoNDUgNTAgNTApIiBmaWxsPSIjMWE5ZmUwIi8+PHJlY3QgeD0iMjIiIHk9IjIyIiB3aWR0aD0iNTYiIGhlaWdodD0iNTYiIHJ4PSI4IiB0cmFuc2Zvcm09InJvdGF0ZSg0NSA1MCA1MCkiIGZpbGw9IiMwZjIwNDQiLz48cG9seWdvbiBwb2ludHM9IjcyLDUwIDUwLDI4IDUwLDQwIDI4LDQwIDI4LDYwIDUwLDYwIDUwLDcyIiBmaWxsPSIjMWE5ZmUwIi8+PC9zdmc+">
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3QgeD0iMTUiIHk9IjE1IiB3aWR0aD0iNzAiIGhlaWdodD0iNzAiIHJ4PSIxMiIgdHJhbnNmb3JtPSJyb3RhdGUoNDUgNTAgNTApIiBmaWxsPSIjMWE5ZmUwIi8+PHJlY3QgeD0iMjIiIHk9IjIyIiB3aWR0aD0iNTYiIGhlaWdodD0iNTYiIHJ4PSI4IiB0cmFuc2Zvcm09InJvdGF0ZSg0NSA1MCA1MCkiIGZpbGw9IiMwZjIwNDQiLz48cG9seWdvbiBwb2ludHM9IjcyLDUwIDUwLDI4IDUwLDQwIDI4LDQwIDI4LDYwIDUwLDYwIDUwLDcyIiBmaWxsPSIjMWE5ZmUwIi8+PC9zdmc+">
+<meta name="theme-color" content="#0a1628">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3QgeD0iMTUiIHk9IjE1IiB3aWR0aD0iNzAiIGhlaWdodD0iNzAiIHJ4PSIxMiIgdHJhbnNmb3JtPSJyb3RhdGUoNDUgNTAgNTApIiBmaWxsPSIjMWE5ZmUwIi8+PHJlY3QgeD0iMjIiIHk9IjIyIiB3aWR0aD0iNTYiIGhlaWdodD0iNTYiIHJ4PSI4IiB0cmFuc2Zvcm09InJvdGF0ZSg0NSA1MCA1MCkiIGZpbGw9IiMwZjIwNDQiLz48cG9seWdvbiBwb2ludHM9IjcyLDUwIDUwLDI4IDUwLDQwIDI4LDQwIDI4LDYwIDUwLDYwIDUwLDcyIiBmaWxsPSIjMWE5ZmUwIi8+PC9zdmc+">
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3QgeD0iMTUiIHk9IjE1IiB3aWR0aD0iNzAiIGhlaWdodD0iNzAiIHJ4PSIxMiIgdHJhbnNmb3JtPSJyb3RhdGUoNDUgNTAgNTApIiBmaWxsPSIjMWE5ZmUwIi8+PHJlY3QgeD0iMjIiIHk9IjIyIiB3aWR0aD0iNTYiIGhlaWdodD0iNTYiIHJ4PSI4IiB0cmFuc2Zvcm09InJvdGF0ZSg0NSA1MCA1MCkiIGZpbGw9IiMwZjIwNDQiLz48cG9seWdvbiBwb2ludHM9IjcyLDUwIDUwLDI4IDUwLDQwIDI4LDQwIDI4LDYwIDUwLDYwIDUwLDcyIiBmaWxsPSIjMWE5ZmUwIi8+PC9zdmc+">
+<meta name="theme-color" content="#0a1628">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&family=Barlow+Condensed:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:#0a1628;--navy-mid:#0f2044;--navy-light:#1a3260;
+  --blue:#1a9fe0;--blue-bright:#2dbfff;
+  --white:#ffffff;--gray-2:#c8dcea;--gray-3:#7ea8c4;
+  --green:#00d68f;--orange:#ff9f43;--red:#ff4757;--purple:#a855f7;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Barlow',sans-serif;background:var(--navy);color:var(--white);overflow-x:hidden}
+
+/* ── SCROLLBAR ── */
+*{scrollbar-width:thin;scrollbar-color:rgba(100,130,160,0.2) transparent}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:rgba(45,191,255,0.25);border-radius:10px}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,22,40,0.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(26,159,224,0.12);padding:0 6vw;height:68px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.nav-logo-icon{width:38px;height:38px}
+.nav-logo-text span:first-child{display:block;font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:800;color:var(--blue-bright);letter-spacing:2px}
+.nav-logo-text span:last-child{display:block;font-size:9px;color:var(--gray-3);letter-spacing:3px;text-transform:uppercase}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{font-size:13px;font-weight:600;color:var(--gray-2);text-decoration:none;letter-spacing:.5px;transition:color .2s}
+.nav-links a:hover{color:var(--blue-bright)}
+.nav-cta{background:var(--blue);color:var(--white);padding:9px 22px;border-radius:8px;font-weight:700;font-size:13px;text-decoration:none;letter-spacing:.5px;transition:background .2s,transform .15s}
+.nav-cta:hover{background:var(--blue-bright);transform:translateY(-1px)}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;align-items:center;padding:100px 6vw 80px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-20%;right:-10%;width:70vw;height:70vw;background:radial-gradient(circle,rgba(26,159,224,0.07) 0%,transparent 65%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-10%;left:-5%;width:50vw;height:50vw;background:radial-gradient(circle,rgba(168,85,247,0.05) 0%,transparent 65%);pointer-events:none}
+.hero-inner{max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(26,159,224,0.1);border:1px solid rgba(26,159,224,0.25);color:var(--blue-bright);padding:6px 16px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px}
+.hero-tag span{width:6px;height:6px;background:var(--blue-bright);border-radius:50%;animation:blink 1.5s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(36px,5vw,64px);font-weight:900;line-height:1.05;letter-spacing:.5px;margin-bottom:20px}
+.hero h1 .line1{display:block;color:var(--white)}
+.hero h1 .line2{display:block;background:linear-gradient(90deg,var(--blue-bright),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero h1 .line3{display:block;color:var(--white)}
+.hero-sub{font-size:16px;color:var(--gray-2);line-height:1.75;margin-bottom:36px;max-width:500px}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap}
+.btn-primary{background:linear-gradient(135deg,var(--blue),var(--blue-bright));color:var(--white);padding:14px 32px;border-radius:10px;font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:800;letter-spacing:1px;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 8px 24px rgba(26,159,224,0.3)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(26,159,224,0.45)}
+.btn-secondary{background:rgba(26,159,224,0.08);border:1px solid rgba(26,159,224,0.3);color:var(--blue-bright);padding:14px 28px;border-radius:10px;font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;letter-spacing:1px;text-decoration:none;transition:background .2s}
+.btn-secondary:hover{background:rgba(26,159,224,0.16)}
+
+/* HERO VISUAL */
+.hero-visual{position:relative}
+.hero-dashboard{background:var(--navy-mid);border:1px solid rgba(26,159,224,0.18);border-radius:16px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,0.5)}
+.dash-topbar{background:rgba(15,32,68,0.9);padding:12px 18px;border-bottom:1px solid rgba(26,159,224,0.1);display:flex;align-items:center;gap:8px}
+.dash-dot{width:10px;height:10px;border-radius:50%}
+.dash-topbar-title{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;color:var(--gray-2);margin-left:8px;letter-spacing:.5px}
+.dash-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(26,159,224,0.08);margin:16px;border-radius:10px;overflow:hidden}
+.dash-kpi{background:var(--navy);padding:14px;text-align:center}
+.dash-kpi-val{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;line-height:1}
+.dash-kpi-label{font-size:9px;color:var(--gray-3);margin-top:4px;letter-spacing:1px;text-transform:uppercase}
+.dash-chart-area{margin:0 16px 16px;background:var(--navy);border-radius:10px;padding:14px;height:120px;position:relative;overflow:hidden}
+.chart-bars{display:flex;align-items:flex-end;gap:6px;height:90px;padding-top:10px}
+.chart-bar{flex:1;border-radius:4px 4px 0 0;transition:height .3s}
+.chart-label{font-size:8px;color:var(--gray-3);text-align:center;margin-top:4px}
+.dash-table{margin:0 16px 16px;background:var(--navy);border-radius:10px;overflow:hidden}
+.dash-table-row{display:flex;padding:8px 12px;border-bottom:1px solid rgba(26,159,224,0.06);font-size:11px;gap:8px;align-items:center}
+.dash-table-row.header{background:rgba(26,159,224,0.05);font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--gray-3)}
+.dash-name{flex:2;font-weight:600}
+.dash-val{flex:1;text-align:center}
+.dash-badge{padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700}
+
+/* ── FLOATING BADGES ── */
+.float-badge{position:absolute;background:var(--navy-mid);border:1px solid rgba(26,159,224,0.2);border-radius:10px;padding:10px 14px;font-size:12px;font-weight:600;display:flex;align-items:center;gap:8px;box-shadow:0 8px 24px rgba(0,0,0,0.4);animation:float 3s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.float-badge.one{top:-20px;right:-20px;animation-delay:0s}
+.float-badge.two{bottom:40px;left:-30px;animation-delay:1s}
+.float-badge.three{top:50%;right:-40px;animation-delay:2s}
+
+/* ── SECTION ── */
+section{padding:100px 6vw}
+.section-inner{max-width:1200px;margin:0 auto}
+.section-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--blue-bright);margin-bottom:12px}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:900;line-height:1.1;margin-bottom:16px}
+.section-sub{font-size:15px;color:var(--gray-2);line-height:1.75;max-width:560px}
+
+/* ── FEATURES ── */
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
+.feature-card{background:var(--navy-mid);border:1px solid rgba(26,159,224,0.1);border-radius:14px;padding:28px;transition:transform .2s,border-color .2s;position:relative;overflow:hidden}
+.feature-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;border-radius:2px 2px 0 0}
+.feature-card.c1::before{background:linear-gradient(90deg,var(--blue),var(--blue-bright))}
+.feature-card.c2::before{background:linear-gradient(90deg,var(--green),#00b877)}
+.feature-card.c3::before{background:linear-gradient(90deg,var(--orange),#f59e0b)}
+.feature-card.c4::before{background:linear-gradient(90deg,var(--red),#dc2626)}
+.feature-card.c5::before{background:linear-gradient(90deg,var(--purple),#7c3aed)}
+.feature-card.c6::before{background:linear-gradient(90deg,#22d3ee,#0891b2)}
+.feature-card:hover{transform:translateY(-4px);border-color:rgba(26,159,224,0.28)}
+.feature-icon{font-size:32px;margin-bottom:16px}
+.feature-title{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:800;letter-spacing:.5px;margin-bottom:8px}
+.feature-desc{font-size:13px;color:var(--gray-3);line-height:1.65}
+
+/* ── MODULES ── */
+.modules-section{background:linear-gradient(135deg,var(--navy-mid),rgba(26,159,224,0.04))}
+.modules-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
+.module-card{background:var(--navy);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:22px 20px;text-align:center;transition:transform .2s,border-color .2s}
+.module-card:hover{transform:translateY(-3px);border-color:rgba(26,159,224,0.25)}
+.module-icon{font-size:36px;margin-bottom:12px}
+.module-name{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;margin-bottom:6px}
+.module-desc{font-size:12px;color:var(--gray-3);line-height:1.5}
+
+/* ── STATS ── */
+.stats-section{text-align:center}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:56px}
+.stat-item{}
+.stat-num{font-family:'Barlow Condensed',sans-serif;font-size:clamp(36px,5vw,56px);font-weight:900;background:linear-gradient(90deg,var(--blue-bright),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.stat-label{font-size:14px;color:var(--gray-3);margin-top:6px}
+
+/* ── HOW IT WORKS ── */
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:56px;position:relative}
+.steps-grid::before{content:'';position:absolute;top:32px;left:12%;right:12%;height:1px;background:linear-gradient(90deg,transparent,rgba(26,159,224,0.3),rgba(168,85,247,0.3),transparent)}
+.step{text-align:center;padding:0 16px}
+.step-num{width:64px;height:64px;border-radius:16px;background:var(--navy-mid);border:1px solid rgba(26,159,224,0.2);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:900;color:var(--blue-bright);position:relative;z-index:1}
+.step-title{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:800;margin-bottom:8px;letter-spacing:.3px}
+.step-desc{font-size:13px;color:var(--gray-3);line-height:1.6}
+
+/* ── BENEFITS ── */
+.benefits-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:48px}
+.benefit-item{display:flex;align-items:flex-start;gap:12px;padding:16px 18px;background:var(--navy-mid);border:1px solid rgba(26,159,224,0.08);border-radius:10px;transition:border-color .2s}
+.benefit-item:hover{border-color:rgba(26,159,224,0.22)}
+.benefit-check{width:24px;height:24px;background:rgba(0,214,143,0.1);border:1px solid rgba(0,214,143,0.25);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;margin-top:1px}
+.benefit-text strong{display:block;font-size:13px;font-weight:700;margin-bottom:3px}
+.benefit-text span{font-size:12px;color:var(--gray-3);line-height:1.5}
+
+/* ── VISION ── */
+.vision-section{background:linear-gradient(135deg,var(--navy-mid),rgba(168,85,247,0.05))}
+.vision-chain{display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;margin-top:48px}
+.vision-step{text-align:center;padding:20px 28px}
+.vision-word{font-family:'Barlow Condensed',sans-serif;font-size:clamp(20px,3vw,32px);font-weight:900;display:block;letter-spacing:.5px}
+.vision-sub{font-size:11px;color:var(--gray-3);display:block;margin-top:4px;letter-spacing:.5px}
+.vision-arrow{color:var(--blue-bright);font-size:24px;opacity:.5;align-self:center}
+
+/* ── CTA ── */
+.cta-section{text-align:center;padding:120px 6vw}
+.cta-inner{max-width:700px;margin:0 auto}
+.cta-section h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(32px,5vw,56px);font-weight:900;line-height:1.1;margin-bottom:20px}
+.cta-section p{font-size:15px;color:var(--gray-2);line-height:1.75;margin-bottom:40px}
+.cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.cta-highlight{display:inline-block;background:linear-gradient(90deg,var(--blue-bright),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* ── FOOTER ── */
+footer{background:var(--navy-mid);border-top:1px solid rgba(26,159,224,0.1);padding:40px 6vw;display:flex;align-items:center;justify-content:space-between}
+footer p{font-size:12px;color:var(--gray-3)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;text-align:center}
+  .hero-sub{margin:0 auto 36px}
+  .hero-btns{justify-content:center}
+  .hero-visual{max-width:600px;margin:0 auto}
+  .features-grid{grid-template-columns:repeat(2,1fr)}
+  .modules-grid{grid-template-columns:repeat(2,1fr)}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .steps-grid{grid-template-columns:repeat(2,1fr);gap:32px}
+  .steps-grid::before{display:none}
+  .benefits-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+}
+@media(max-width:600px){
+  .features-grid,.modules-grid,.stats-grid{grid-template-columns:1fr}
+  .vision-chain{flex-direction:column}
+  .vision-arrow{transform:rotate(90deg)}
+}
+
+/* ── PRICING ── */
+.pricing-section{padding:100px 6vw;background:var(--navy)}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;align-items:start}
+.pricing-card{background:var(--navy-mid);border:1px solid rgba(26,159,224,0.12);border-radius:16px;padding:36px 28px;position:relative;overflow:hidden;transition:transform .2s,border-color .2s}
+.pricing-card:hover{transform:translateY(-4px)}
+.pricing-card.featured{border-color:rgba(26,159,224,0.45);box-shadow:0 0 40px rgba(26,159,224,0.1)}
+.pricing-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.pricing-card.basic::before{background:linear-gradient(90deg,#7ea8c4,#c8dcea)}
+.pricing-card.pro::before{background:linear-gradient(90deg,var(--blue),var(--blue-bright))}
+.pricing-card.enterprise::before{background:linear-gradient(90deg,var(--purple),#c084fc)}
+.pricing-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:20px}
+.pricing-badge.basic{background:rgba(126,168,196,0.12);color:#c8dcea}
+.pricing-badge.pro{background:rgba(26,159,224,0.12);color:var(--blue-bright)}
+.pricing-badge.enterprise{background:rgba(168,85,247,0.12);color:#c084fc}
+.pricing-popular{position:absolute;top:16px;right:16px;background:var(--blue-bright);color:var(--navy);font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px}
+.pricing-name{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:900;margin-bottom:4px;letter-spacing:.5px}
+.pricing-desc{font-size:12px;color:var(--gray-3);margin-bottom:24px;line-height:1.5}
+.pricing-price{display:flex;align-items:flex-end;gap:4px;margin-bottom:8px}
+.pricing-currency{font-size:16px;font-weight:700;color:var(--gray-2);margin-bottom:6px}
+.pricing-amount{font-family:'Barlow Condensed',sans-serif;font-size:52px;font-weight:900;line-height:1;color:var(--white)}
+.pricing-period{font-size:13px;color:var(--gray-3);margin-bottom:28px}
+.pricing-divider{height:1px;background:rgba(26,159,224,0.1);margin-bottom:24px}
+.pricing-features{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:32px}
+.pricing-features li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--gray-2);line-height:1.4}
+.pricing-features li .pf-icon{flex-shrink:0;margin-top:1px;font-size:14px}
+.pricing-features li.muted{color:var(--gray-3);opacity:.6}
+.pricing-btn{display:block;text-align:center;padding:13px 20px;border-radius:10px;font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:800;letter-spacing:.5px;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.pricing-btn.basic{background:rgba(126,168,196,0.1);border:1px solid rgba(126,168,196,0.25);color:#c8dcea}
+.pricing-btn.basic:hover{background:rgba(126,168,196,0.18)}
+.pricing-btn.pro{background:linear-gradient(135deg,var(--blue),var(--blue-bright));color:#fff;box-shadow:0 6px 20px rgba(26,159,224,0.3)}
+.pricing-btn.pro:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(26,159,224,0.45)}
+.pricing-btn.enterprise{background:rgba(168,85,247,0.1);border:1px solid rgba(168,85,247,0.3);color:#c084fc}
+.pricing-btn.enterprise:hover{background:rgba(168,85,247,0.18)}
+.pricing-note{text-align:center;font-size:12px;color:var(--gray-3);margin-top:24px}
+@media(max-width:1024px){.pricing-grid{grid-template-columns:1fr}}
+
+/* ── FUNIL DE VENDAS ── */
+.funnel-section{padding:100px 6vw;background:linear-gradient(135deg,var(--navy) 0%,rgba(26,159,224,0.04) 100%)}
+.funnel-wrap{max-width:680px;margin:0 auto}
+.funnel-header{text-align:center;margin-bottom:48px}
+.funnel-progress{display:flex;align-items:center;justify-content:center;gap:0;margin-bottom:40px}
+.funnel-step-dot{width:36px;height:36px;border-radius:50%;border:2px solid rgba(26,159,224,0.25);background:var(--navy-mid);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:800;color:var(--gray-3);transition:all .35s;position:relative;z-index:1}
+.funnel-step-dot.active{border-color:var(--blue-bright);background:rgba(26,159,224,0.15);color:var(--blue-bright)}
+.funnel-step-dot.done{border-color:var(--green);background:rgba(0,214,143,0.15);color:var(--green)}
+.funnel-step-line{flex:1;height:2px;background:rgba(26,159,224,0.12);max-width:80px;transition:background .35s}
+.funnel-step-line.done{background:var(--green)}
+.funnel-card{background:var(--navy-mid);border:1px solid rgba(26,159,224,0.14);border-radius:16px;padding:40px;position:relative;overflow:hidden}
+.funnel-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--blue-bright))}
+.funnel-question{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;line-height:1.25;margin-bottom:8px;letter-spacing:.3px}
+.funnel-hint{font-size:13px;color:var(--gray-3);margin-bottom:28px}
+.funnel-options{display:grid;gap:12px}
+.funnel-option{display:flex;align-items:center;gap:14px;padding:14px 18px;background:var(--navy);border:1px solid rgba(26,159,224,0.12);border-radius:10px;cursor:pointer;transition:border-color .2s,background .2s;text-align:left;width:100%}
+.funnel-option:hover{border-color:rgba(26,159,224,0.4);background:rgba(26,159,224,0.06)}
+.funnel-option.selected{border-color:var(--blue-bright);background:rgba(26,159,224,0.12)}
+.funnel-option-icon{font-size:22px;flex-shrink:0}
+.funnel-option-text strong{display:block;font-size:14px;font-weight:700;color:var(--white)}
+.funnel-option-text span{font-size:12px;color:var(--gray-3)}
+.funnel-nav{display:flex;justify-content:space-between;align-items:center;margin-top:28px;gap:16px}
+.funnel-btn-back{background:none;border:1px solid rgba(26,159,224,0.2);color:var(--gray-3);padding:10px 20px;border-radius:8px;font-family:'Barlow',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:border-color .2s,color .2s}
+.funnel-btn-back:hover{border-color:rgba(26,159,224,0.4);color:var(--gray-2)}
+.funnel-btn-next{background:linear-gradient(135deg,var(--blue),var(--blue-bright));color:var(--white);border:none;padding:12px 32px;border-radius:8px;font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:800;letter-spacing:.5px;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 6px 20px rgba(26,159,224,0.3);opacity:.4;pointer-events:none}
+.funnel-btn-next.enabled{opacity:1;pointer-events:auto}
+.funnel-btn-next.enabled:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(26,159,224,0.45)}
+.funnel-slide{display:none}
+.funnel-slide.active{display:block;animation:fadeSlide .3s ease}
+@keyframes fadeSlide{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:translateX(0)}}
+.funnel-result{text-align:center;padding:10px 0 0}
+.funnel-result-icon{font-size:56px;margin-bottom:16px}
+.funnel-result-title{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:900;margin-bottom:8px}
+.funnel-result-sub{font-size:14px;color:var(--gray-2);line-height:1.7;margin-bottom:32px}
+.funnel-wpp-btn{display:inline-flex;align-items:center;gap:12px;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;padding:16px 36px;border-radius:12px;font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:800;letter-spacing:.5px;text-decoration:none;box-shadow:0 8px 28px rgba(37,211,102,0.35);transition:transform .2s,box-shadow .2s}
+.funnel-wpp-btn:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(37,211,102,0.5)}
+.funnel-wpp-icon{width:26px;height:26px}
+.funnel-restart{background:none;border:none;color:var(--gray-3);font-size:12px;cursor:pointer;margin-top:18px;text-decoration:underline;font-family:'Barlow',sans-serif}
+.funnel-restart:hover{color:var(--gray-2)}
+@media(max-width:600px){
+  .funnel-card{padding:28px 20px}
+  .funnel-question{font-size:18px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <svg class="nav-logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <rect x="15" y="15" width="70" height="70" rx="12" transform="rotate(45 50 50)" fill="#1a9fe0"/>
+      <rect x="22" y="22" width="56" height="56" rx="8" transform="rotate(45 50 50)" fill="#0f2044"/>
+      <polygon points="28,50 50,28 50,40 72,40 72,60 50,60 50,72" fill="#1a9fe0"/>
+    </svg>
+    <div class="nav-logo-text">
+      <span>SIGCORJ</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#funcionalidades">Funcionalidades</a>
+    <a href="#modulos">Módulos</a>
+    <a href="#como-funciona">Como Funciona</a>
+    <a href="#beneficios">Benefícios</a>
+    <a href="#planos">Planos</a>
+    <a href="#funil">Qualificação</a>
+  </div>
+  <a href="#cta" class="nav-cta">Solicitar Acesso</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-tag"><span></span>Sistema de Gestão Operacional</div>
+      <h1>
+        <span class="line1">Transforme Dados</span>
+        <span class="line2">em Decisões</span>
+        <span class="line3">Estratégicas.</span>
+      </h1>
+      <p class="hero-sub">O SIGCORJ é a plataforma de governança e controle de jornada que converte planilhas em dashboards inteligentes — com indicadores de horas extras, combustível, conformidade e muito mais, em tempo real.</p>
+      <div class="hero-btns">
+        <a href="#cta" class="btn-primary">🚀 Solicitar Demonstração</a>
+        <a href="#como-funciona" class="btn-secondary">Como Funciona →</a>
+      </div>
+    </div>
+
+    <!-- DASHBOARD PREVIEW -->
+    <div class="hero-visual">
+      <div class="hero-dashboard">
+        <div class="dash-topbar">
+          <div class="dash-dot" style="background:#ff4757"></div>
+          <div class="dash-dot" style="background:#ff9f43;margin-left:4px"></div>
+          <div class="dash-dot" style="background:#00d68f;margin-left:4px"></div>
+          <span class="dash-topbar-title">SIGCORJ · Dashboard de Jornada · Maio 2026</span>
+        </div>
+        <div class="dash-kpis">
+          <div class="dash-kpi">
+            <div class="dash-kpi-val" style="color:#2dbfff">42</div>
+            <div class="dash-kpi-label">Motoristas</div>
+          </div>
+          <div class="dash-kpi">
+            <div class="dash-kpi-val" style="color:#00d68f">R$48k</div>
+            <div class="dash-kpi-label">Total Pago</div>
+          </div>
+          <div class="dash-kpi">
+            <div class="dash-kpi-val" style="color:#ff9f43">384h</div>
+            <div class="dash-kpi-label">H. Extras</div>
+          </div>
+          <div class="dash-kpi">
+            <div class="dash-kpi-val" style="color:#ff4757">23</div>
+            <div class="dash-kpi-label">NCs</div>
+          </div>
+        </div>
+        <div class="dash-chart-area">
+          <div class="chart-bars">
+            <div style="display:flex;flex-direction:column;align-items:center;flex:1">
+              <div class="chart-bar" style="width:100%;height:45px;background:rgba(26,159,224,0.7)"></div>
+              <div class="chart-label">Jul</div>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;flex:1">
+              <div class="chart-bar" style="width:100%;height:65px;background:rgba(26,159,224,0.7)"></div>
+              <div class="chart-label">Ago</div>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;flex:1">
+              <div class="chart-bar" style="width:100%;height:40px;background:rgba(26,159,224,0.7)"></div>
+              <div class="chart-label">Set</div>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;flex:1">
+              <div class="chart-bar" style="width:100%;height:75px;background:rgba(0,214,143,0.7)"></div>
+              <div class="chart-label">Out</div>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;flex:1">
+              <div class="chart-bar" style="width:100%;height:55px;background:rgba(26,159,224,0.7)"></div>
+              <div class="chart-label">Nov</div>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;flex:1">
+              <div class="chart-bar" style="width:100%;height:80px;background:rgba(255,159,67,0.7)"></div>
+              <div class="chart-label">Dez</div>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;flex:1">
+              <div class="chart-bar" style="width:100%;height:50px;background:rgba(26,159,224,0.7)"></div>
+              <div class="chart-label">Jan</div>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;flex:1">
+              <div class="chart-bar" style="width:100%;height:90px;background:rgba(168,85,247,0.7)"></div>
+              <div class="chart-label">Mai</div>
+            </div>
+          </div>
+        </div>
+        <div class="dash-table">
+          <div class="dash-table-row header">
+            <span class="dash-name">Motorista</span>
+            <span class="dash-val">H.50%</span>
+            <span class="dash-val">Pago</span>
+            <span class="dash-val">NCs</span>
+          </div>
+          <div class="dash-table-row">
+            <span class="dash-name" style="color:var(--white)">Adilson Villela</span>
+            <span class="dash-val" style="color:#2dbfff">12h</span>
+            <span class="dash-val" style="color:#00d68f">R$1.2k</span>
+            <span class="dash-val"><span class="dash-badge" style="background:rgba(0,214,143,0.1);color:#00d68f">0</span></span>
+          </div>
+          <div class="dash-table-row">
+            <span class="dash-name" style="color:var(--white)">Carlos Correa</span>
+            <span class="dash-val" style="color:#2dbfff">18h</span>
+            <span class="dash-val" style="color:#00d68f">R$1.8k</span>
+            <span class="dash-val"><span class="dash-badge" style="background:rgba(255,159,67,0.1);color:#ff9f43">2</span></span>
+          </div>
+          <div class="dash-table-row">
+            <span class="dash-name" style="color:var(--white)">João Barbosa</span>
+            <span class="dash-val" style="color:#2dbfff">8h</span>
+            <span class="dash-val" style="color:#00d68f">R$0.8k</span>
+            <span class="dash-val"><span class="dash-badge" style="background:rgba(255,71,87,0.1);color:#ff4757">5</span></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating badges -->
+      <div class="float-badge one">
+        <span>⛽</span><div><div style="font-size:13px;font-weight:700;color:#fb923c">8.4 km/l</div><div style="font-size:10px;color:var(--gray-3)">Média Frota</div></div>
+      </div>
+      <div class="float-badge two">
+        <span>✅</span><div><div style="font-size:13px;font-weight:700;color:#00d68f">94% Conf.</div><div style="font-size:10px;color:var(--gray-3)">Conformidade</div></div>
+      </div>
+      <div class="float-badge three">
+        <span>📊</span><div><div style="font-size:13px;font-weight:700;color:#2dbfff">-18%</div><div style="font-size:10px;color:var(--gray-3)">Custo vs mês ant.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="funcionalidades" style="padding:100px 6vw;background:var(--navy-mid)">
+  <div class="section-inner">
+    <div style="text-align:center;margin-bottom:0">
+      <div class="section-tag">Funcionalidades</div>
+      <h2 class="section-title">Tudo que sua operação precisa<br>em um só lugar</h2>
+      <p class="section-sub" style="margin:0 auto">Do upload da planilha ao dashboard completo em segundos. Sem complicação, sem código, sem depender de TI.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card c1">
+        <div class="feature-icon">⏱️</div>
+        <div class="feature-title">Controle de Jornada</div>
+        <p class="feature-desc">Monitore horas extras 50% e 100% por motorista, com totais financeiros, rankings e evolução mensal automática.</p>
+      </div>
+      <div class="feature-card c2">
+        <div class="feature-icon">⛽</div>
+        <div class="feature-title">Média de Combustível</div>
+        <p class="feature-desc">Acompanhe km/l por veículo e motorista, identifique consumo acima da média e reduza custos operacionais.</p>
+      </div>
+      <div class="feature-card c3">
+        <div class="feature-icon">🚦</div>
+        <div class="feature-title">Controle de Multas</div>
+        <p class="feature-desc">Registre e categorize infrações de motoristas CLT e terceiros com valor total e histórico por período.</p>
+      </div>
+      <div class="feature-card c4">
+        <div class="feature-icon">⚠️</div>
+        <div class="feature-title">Não Conformidades</div>
+        <p class="feature-desc">Audite direção contínua, descanso interjornada, alimentação e excesso de jornada com ranking visual.</p>
+      </div>
+      <div class="feature-card c5">
+        <div class="feature-icon">📊</div>
+        <div class="feature-title">Comparativos Mensais</div>
+        <p class="feature-desc">Compare dois períodos lado a lado com variação percentual, gráficos e tabelas — tome decisões com base em dados reais.</p>
+      </div>
+      <div class="feature-card c6">
+        <div class="feature-icon">💰</div>
+        <div class="feature-title">Resultados Acumulados</div>
+        <p class="feature-desc">Visualize o consolidado financeiro semestral com evolução mês a mês e acumulado por motorista.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MÓDULOS -->
+<section id="modulos" style="padding:100px 6vw">
+  <div class="section-inner">
+    <div style="text-align:center">
+      <div class="section-tag">Módulos do Sistema</div>
+      <h2 class="section-title">9 módulos integrados,<br>1 plataforma unificada</h2>
+    </div>
+    <div class="modules-grid">
+      <div class="module-card">
+        <div class="module-icon">⏱️</div>
+        <div class="module-name" style="color:#2dbfff">Jornada</div>
+        <p class="module-desc">Horas 50% e 100%, pagamentos e NCs por motorista</p>
+      </div>
+      <div class="module-card">
+        <div class="module-icon">⚠️</div>
+        <div class="module-name" style="color:#ff6b7a">Não Conformidades</div>
+        <p class="module-desc">4 tipos de NC com ranking e dashboard visual</p>
+      </div>
+      <div class="module-card">
+        <div class="module-icon">🚦</div>
+        <div class="module-name" style="color:#f87171">Multas</div>
+        <p class="module-desc">CLT e terceiros, por mês, com valor total acumulado</p>
+      </div>
+      <div class="module-card">
+        <div class="module-icon">⛽</div>
+        <div class="module-name" style="color:#fb923c">Combustível</div>
+        <p class="module-desc">Média km/l, litros abastecidos e eficiência por motorista</p>
+      </div>
+      <div class="module-card">
+        <div class="module-icon">🚛</div>
+        <div class="module-name" style="color:#22d3ee">Frota</div>
+        <p class="module-desc">Cavalo mecânico e carretas com status e manutenção</p>
+      </div>
+      <div class="module-card">
+        <div class="module-icon">📅</div>
+        <div class="module-name" style="color:#c084fc">Inteligência Op.</div>
+        <p class="module-desc">Feriados, finais de semana e pausas operacionais</p>
+      </div>
+      <div class="module-card">
+        <div class="module-icon">📊</div>
+        <div class="module-name" style="color:#2dbfff">Comparativos</div>
+        <p class="module-desc">Dois períodos lado a lado com variação e gráficos</p>
+      </div>
+      <div class="module-card">
+        <div class="module-icon">💰</div>
+        <div class="module-name" style="color:#00d68f">Resultados</div>
+        <p class="module-desc">Consolidado financeiro semestral acumulado</p>
+      </div>
+      <div class="module-card">
+        <div class="module-icon">👤</div>
+        <div class="module-name" style="color:#fb923c">Motoristas</div>
+        <p class="module-desc">Cadastro completo com arquivos 2025 e 2026</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section style="padding:100px 6vw;background:var(--navy-mid)">
+  <div class="section-inner stats-section">
+    <div class="section-tag">Números que impressionam</div>
+    <h2 class="section-title">Resultados reais para<br>operações reais</h2>
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-num">55+</div>
+        <div class="stat-label">Motoristas monitorados simultaneamente</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">9</div>
+        <div class="stat-label">Módulos integrados em uma plataforma</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Dados salvos na nuvem em tempo real</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">0</div>
+        <div class="stat-label">Linhas de código necessárias para usar</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="como-funciona" style="padding:100px 6vw">
+  <div class="section-inner">
+    <div style="text-align:center">
+      <div class="section-tag">Como Funciona</div>
+      <h2 class="section-title">Do upload ao dashboard<br>em 4 passos simples</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-title">Selecione o Módulo</div>
+        <p class="step-desc">Escolha o período e categoria no menu lateral — Jornada, Multas, Combustível ou qualquer outro módulo.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-title">Importe a Planilha</div>
+        <p class="step-desc">Faça upload do arquivo .xlsx, .xls ou .csv. O sistema detecta as colunas automaticamente.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-title">Dashboard Automático</div>
+        <p class="step-desc">KPIs, gráficos, tabelas e rankings são gerados instantaneamente com seus dados reais.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-title">Compartilhe & Decida</div>
+        <p class="step-desc">Exporte em PDF para apresentar à diretoria. Os dados ficam salvos na nuvem para toda a equipe.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MOTION CTA STRIP -->
+<section class="motion-cta-section" id="motion-cta">
+  <div class="motion-cta-bg"></div>
+  <div class="motion-cta-grid-lines"></div>
+  <div class="motion-cta-inner">
+    <div class="motion-cta-eyebrow">
+      <span class="motion-dot"></span>
+      <span>Nossa missão</span>
+    </div>
+    <div class="motion-cta-text-wrap">
+      <p class="motion-cta-phrase">
+        <span class="motion-word" data-delay="0">Transformamos</span>
+        <span class="motion-word highlight-blue" data-delay="120">dados operacionais</span>
+        <span class="motion-word" data-delay="240">em</span>
+        <span class="motion-word highlight-gradient" data-delay="360">governança de jornada,</span>
+        <br class="motion-br">
+        <span class="motion-word" data-delay="500">reduzindo</span>
+        <span class="motion-word highlight-red" data-delay="620">riscos trabalhistas,</span>
+        <span class="motion-word" data-delay="740">aumentando a</span>
+        <span class="motion-word highlight-green" data-delay="860">conformidade</span>
+        <br class="motion-br">
+        <span class="motion-word" data-delay="1000">e apoiando</span>
+        <span class="motion-word highlight-purple" data-delay="1120">decisões estratégicas</span>
+        <span class="motion-word" data-delay="1240">no transporte.</span>
+      </p>
+    </div>
+    <div class="motion-cta-metrics">
+      <div class="motion-metric">
+        <span class="motion-metric-icon">🛡️</span>
+        <span>Risco Trabalhista</span>
+        <span class="motion-metric-arrow">↓</span>
+      </div>
+      <div class="motion-metric-divider"></div>
+      <div class="motion-metric">
+        <span class="motion-metric-icon">✅</span>
+        <span>Conformidade</span>
+        <span class="motion-metric-arrow up">↑</span>
+      </div>
+      <div class="motion-metric-divider"></div>
+      <div class="motion-metric">
+        <span class="motion-metric-icon">📊</span>
+        <span>Decisões Estratégicas</span>
+        <span class="motion-metric-arrow up">↑</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* ── MOTION CTA SECTION ── */
+.motion-cta-section {
+  position: relative;
+  padding: 110px 6vw;
+  background: linear-gradient(160deg, #060d1a 0%, #0a1628 40%, #0d1f3c 70%, #060d1a 100%);
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Animated radial glow background */
+.motion-cta-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 50%, rgba(26,159,224,0.09) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 20% 80%, rgba(168,85,247,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 80% 20%, rgba(0,214,143,0.05) 0%, transparent 60%);
+  animation: motionBgPulse 6s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+@keyframes motionBgPulse {
+  0%   { opacity: 0.6; transform: scale(1); }
+  100% { opacity: 1;   transform: scale(1.04); }
+}
+
+/* Subtle grid lines overlay */
+.motion-cta-grid-lines {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(26,159,224,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26,159,224,0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+
+/* Top border accent */
+.motion-cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--blue) 30%, var(--blue-bright) 50%, var(--purple) 70%, transparent 100%);
+}
+
+/* Bottom border accent */
+.motion-cta-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--purple) 30%, var(--blue-bright) 50%, var(--blue) 70%, transparent 100%);
+}
+
+.motion-cta-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.motion-cta-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--blue-bright);
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: motionFadeUp 0.5s ease forwards;
+}
+.motion-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--blue-bright);
+  animation: blink 1.5s ease-in-out infinite;
+}
+
+/* Phrase container */
+.motion-cta-text-wrap {
+  margin-bottom: 52px;
+}
+
+.motion-cta-phrase {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(24px, 3.8vw, 52px);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: 0.3px;
+  color: var(--white);
+}
+
+/* Each word animates in */
+.motion-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(22px);
+  transition: none;
+}
+.motion-word.visible {
+  animation: motionWordIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes motionWordIn {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Color highlights */
+.highlight-blue     { color: var(--blue-bright); }
+.highlight-gradient {
+  background: linear-gradient(90deg, var(--blue-bright), var(--purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.highlight-red    { color: #ff6b7a; }
+.highlight-green  { color: var(--green); }
+.highlight-purple { color: #c084fc; }
+
+/* Metrics row */
+.motion-cta-metrics {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(26,159,224,0.18);
+  border-radius: 50px;
+  padding: 14px 32px;
+  opacity: 0;
+  animation: motionFadeUp 0.6s ease 1.6s forwards;
+}
+.motion-metric {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-2);
+  padding: 0 20px;
+}
+.motion-metric-icon { font-size: 16px; }
+.motion-metric-arrow {
+  font-size: 16px;
+  font-weight: 900;
+  color: #ff6b7a;
+}
+.motion-metric-arrow.up { color: var(--green); }
+.motion-metric-divider {
+  width: 1px;
+  height: 28px;
+  background: rgba(26,159,224,0.2);
+}
+
+.motion-br { display: block; margin: 4px 0; }
+
+@keyframes motionFadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media(max-width: 768px) {
+  .motion-cta-metrics {
+    flex-direction: column;
+    border-radius: 16px;
+    gap: 12px;
+    padding: 20px 24px;
+  }
+  .motion-metric-divider { width: 80px; height: 1px; }
+  .motion-br { display: inline; }
+}
+</style>
+
+<script>
+(function() {
+  const words = document.querySelectorAll('.motion-word');
+  const section = document.querySelector('.motion-cta-section');
+  let triggered = false;
+
+  function triggerWords() {
+    if (triggered) return;
+    triggered = true;
+    words.forEach(w => {
+      const delay = parseInt(w.dataset.delay || 0);
+      setTimeout(() => w.classList.add('visible'), delay);
+    });
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) triggerWords(); });
+  }, { threshold: 0.25 });
+
+  if (section) observer.observe(section);
+})();
+</script>
+
+<!-- BENEFITS -->
+<section id="beneficios" style="padding:100px 6vw;background:var(--navy-mid)">
+  <div class="section-inner">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center">
+      <div>
+        <div class="section-tag">Benefícios</div>
+        <h2 class="section-title">Deixe de gerenciar planilhas.<br>Comece a <span style="color:var(--blue-bright)">gerenciar resultados.</span></h2>
+        <p class="section-sub" style="margin-bottom:0">O SIGCORJ transforma dados brutos em inteligência operacional — permitindo que a gestão tome decisões rápidas, precisas e baseadas em fatos.</p>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-item">
+          <div class="benefit-check">✅</div>
+          <div class="benefit-text"><strong>Redução de custos com horas extras</strong><span>Identifique desvios antes que se tornem prejuízo</span></div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-check">✅</div>
+          <div class="benefit-text"><strong>Conformidade trabalhista garantida</strong><span>Monitoramento contínuo das NCs e jornadas</span></div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-check">✅</div>
+          <div class="benefit-text"><strong>Acesso de qualquer lugar</strong><span>100% na nuvem, qualquer dispositivo</span></div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-check">✅</div>
+          <div class="benefit-text"><strong>Eficiência da frota aumentada</strong><span>Controle real de combustível e manutenção</span></div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-check">✅</div>
+          <div class="benefit-text"><strong>Relatórios em PDF para diretoria</strong><span>Dashboards exportáveis com um clique</span></div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-check">✅</div>
+          <div class="benefit-text"><strong>Zero dependência de TI</strong><span>Importe planilhas e tudo funciona automaticamente</span></div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-check">✅</div>
+          <div class="benefit-text"><strong>Comparativo entre períodos</strong><span>Veja a evolução mês a mês com variação percentual</span></div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-check">✅</div>
+          <div class="benefit-text"><strong>Cultura orientada por dados</strong><span>Decisões baseadas em evidências, não suposições</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section" id="planos">
+  <div class="section-inner">
+    <div style="text-align:center">
+      <div class="section-tag">Planos & Preços</div>
+      <h2 class="section-title">Escolha o plano ideal<br>para sua operação</h2>
+      <p class="section-sub" style="margin:0 auto">Todos os planos incluem acesso completo aos 9 módulos, suporte e dados salvos na nuvem.</p>
+    </div>
+    <div class="pricing-grid">
+
+      <!-- BASIC -->
+      <div class="pricing-card basic">
+        <div class="pricing-badge basic">Basic</div>
+        <div class="pricing-name">Basic</div>
+        <div class="pricing-desc">Ideal para operações enxutas que precisam de controle sem complexidade.</div>
+        <div class="pricing-price">
+          <span class="pricing-currency">R$</span>
+          <span class="pricing-amount">99</span>
+          <span style="font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:900;color:var(--white);margin-bottom:2px">,90</span>
+        </div>
+        <div class="pricing-period">por mês · até 5 usuários</div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li><span class="pf-icon">👑</span> <span><strong>1 Administrador</strong> — faz uploads e gerencia dados</span></li>
+          <li><span class="pf-icon">👁️</span> <span><strong>4 Visualizadores</strong> — acesso aos dashboards e relatórios</span></li>
+          <li><span class="pf-icon">✅</span> <span>Todos os 9 módulos incluídos</span></li>
+          <li><span class="pf-icon">✅</span> <span>Importação de planilhas .xlsx / .csv</span></li>
+          <li><span class="pf-icon">✅</span> <span>Dashboards em tempo real</span></li>
+          <li><span class="pf-icon">✅</span> <span>Exportação em PDF</span></li>
+          <li><span class="pf-icon">✅</span> <span>Suporte via WhatsApp</span></li>
+        </ul>
+        <a href="https://wa.me/5519990068392?text=Ol%C3%A1%2C+tenho+interesse+no+plano+Basic+do+SIGCORJ+%28R%2499%2C90%2Fm%C3%AAs%29.+Pode+me+enviar+mais+informa%C3%A7%C3%B5es%3F" target="_blank" class="pricing-btn basic">Contratar Basic →</a>
+      </div>
+
+      <!-- PRO -->
+      <div class="pricing-card pro featured">
+        <span class="pricing-popular">⭐ Mais Popular</span>
+        <div class="pricing-badge pro">Pro</div>
+        <div class="pricing-name">Pro</div>
+        <div class="pricing-desc">Para equipes de gestão que precisam de múltiplos administradores e colaboração.</div>
+        <div class="pricing-price">
+          <span class="pricing-currency">R$</span>
+          <span class="pricing-amount">139</span>
+          <span style="font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:900;color:var(--white);margin-bottom:2px">,90</span>
+        </div>
+        <div class="pricing-period">por mês · até 7 usuários</div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li><span class="pf-icon">👑</span> <span><strong>3 Administradores</strong> — fazem uploads e gerenciam dados</span></li>
+          <li><span class="pf-icon">👁️</span> <span><strong>4 Visualizadores</strong> — acesso aos dashboards e relatórios</span></li>
+          <li><span class="pf-icon">✅</span> <span>Todos os 9 módulos incluídos</span></li>
+          <li><span class="pf-icon">✅</span> <span>Importação de planilhas .xlsx / .csv</span></li>
+          <li><span class="pf-icon">✅</span> <span>Dashboards em tempo real</span></li>
+          <li><span class="pf-icon">✅</span> <span>Exportação em PDF</span></li>
+          <li><span class="pf-icon">✅</span> <span>Suporte prioritário via WhatsApp</span></li>
+        </ul>
+        <a href="https://wa.me/5519990068392?text=Ol%C3%A1%2C+tenho+interesse+no+plano+Pro+do+SIGCORJ+%28R%24139%2C90%2Fm%C3%AAs%29.+Pode+me+enviar+mais+informa%C3%A7%C3%B5es%3F" target="_blank" class="pricing-btn pro">Contratar Pro →</a>
+      </div>
+
+      <!-- ENTERPRISE -->
+      <div class="pricing-card enterprise">
+        <div class="pricing-badge enterprise">Enterprise</div>
+        <div class="pricing-name">Enterprise</div>
+        <div class="pricing-desc">Controle total para grandes operações — todos os usuários com poder de administrador.</div>
+        <div class="pricing-price">
+          <span class="pricing-currency">R$</span>
+          <span class="pricing-amount">189</span>
+          <span style="font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:900;color:var(--white);margin-bottom:2px">,90</span>
+        </div>
+        <div class="pricing-period">por mês · até 10 usuários</div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li><span class="pf-icon">👑</span> <span><strong>10 Administradores</strong> — todos fazem uploads e gerenciam dados</span></li>
+          <li><span class="pf-icon">✅</span> <span>Todos os 9 módulos incluídos</span></li>
+          <li><span class="pf-icon">✅</span> <span>Importação de planilhas .xlsx / .csv</span></li>
+          <li><span class="pf-icon">✅</span> <span>Dashboards em tempo real</span></li>
+          <li><span class="pf-icon">✅</span> <span>Exportação em PDF</span></li>
+          <li><span class="pf-icon">✅</span> <span>Suporte VIP com atendimento dedicado</span></li>
+          <li><span class="pf-icon">✅</span> <span>Onboarding e configuração incluso</span></li>
+        </ul>
+        <a href="https://wa.me/5519990068392?text=Ol%C3%A1%2C+tenho+interesse+no+plano+Enterprise+do+SIGCORJ+%28R%24189%2C90%2Fm%C3%AAs%29.+Pode+me+enviar+mais+informa%C3%A7%C3%B5es%3F" target="_blank" class="pricing-btn enterprise">Contratar Enterprise →</a>
+      </div>
+
+    </div>
+    <p class="pricing-note">✓ Sem contrato de fidelidade &nbsp;·&nbsp; ✓ Cancele quando quiser &nbsp;·&nbsp; ✓ Dados exportáveis a qualquer momento</p>
+  </div>
+</section>
+
+<!-- VISION -->
+<section class="vision-section" style="padding:100px 6vw">
+  <div class="section-inner" style="text-align:center">
+    <div class="section-tag">Nossa Visão</div>
+    <h2 class="section-title">De dado a resultado —<br>a cadeia de valor do SIGCORJ</h2>
+    <div class="vision-chain">
+      <div class="vision-step">
+        <span class="vision-word" style="color:var(--gray-2)">Jornada</span>
+        <span class="vision-sub">ponto de partida</span>
+      </div>
+      <span class="vision-arrow">→</span>
+      <div class="vision-step">
+        <span class="vision-word" style="color:var(--blue-bright)">Dado</span>
+        <span class="vision-sub">registro estruturado</span>
+      </div>
+      <span class="vision-arrow">→</span>
+      <div class="vision-step">
+        <span class="vision-word" style="color:var(--white)">Informação</span>
+        <span class="vision-sub">análise e contexto</span>
+      </div>
+      <span class="vision-arrow">→</span>
+      <div class="vision-step">
+        <span class="vision-word" style="color:var(--green)">Decisão</span>
+        <span class="vision-sub">inteligência estratégica</span>
+      </div>
+      <span class="vision-arrow">→</span>
+      <div class="vision-step">
+        <span class="vision-word" style="background:linear-gradient(90deg,var(--orange),#fbbf24);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Resultado</span>
+        <span class="vision-sub">impacto real</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FUNIL DE VENDAS -->
+<section class="funnel-section" id="funil">
+  <div class="funnel-wrap">
+    <div class="funnel-header">
+      <div class="section-tag">Qualificação Rápida</div>
+      <h2 class="section-title">3 perguntas para entender<br>como o SIGCORJ pode <span style="color:var(--blue-bright)">ajudar você</span></h2>
+      <p style="font-size:14px;color:var(--gray-3);margin-top:8px">Leva menos de 1 minuto. Sem compromisso.</p>
+    </div>
+
+    <!-- PROGRESSO -->
+    <div class="funnel-progress" id="funnelProgress">
+      <div class="funnel-step-dot active" id="dot1">1</div>
+      <div class="funnel-step-line" id="line1"></div>
+      <div class="funnel-step-dot" id="dot2">2</div>
+      <div class="funnel-step-line" id="line2"></div>
+      <div class="funnel-step-dot" id="dot3">3</div>
+    </div>
+
+    <div class="funnel-card">
+
+      <!-- PERGUNTA 1 -->
+      <div class="funnel-slide active" id="slide1">
+        <div class="funnel-question">Quantos motoristas sua empresa possui?</div>
+        <div class="funnel-hint">Isso nos ajuda a recomendar o plano ideal.</div>
+        <div class="funnel-options" id="opts1">
+          <button class="funnel-option" onclick="selectOption(1,this,'Até 15 motoristas')">
+            <span class="funnel-option-icon">🚐</span>
+            <div class="funnel-option-text"><strong>Até 15 motoristas</strong><span>Pequena operação ou transportadora regional</span></div>
+          </button>
+          <button class="funnel-option" onclick="selectOption(1,this,'16 a 50 motoristas')">
+            <span class="funnel-option-icon">🚛</span>
+            <div class="funnel-option-text"><strong>16 a 50 motoristas</strong><span>Frota média com necessidade de controle estruturado</span></div>
+          </button>
+          <button class="funnel-option" onclick="selectOption(1,this,'Mais de 50 motoristas')">
+            <span class="funnel-option-icon">🏢</span>
+            <div class="funnel-option-text"><strong>Mais de 50 motoristas</strong><span>Grande operação logística ou transportadora</span></div>
+          </button>
+        </div>
+        <div class="funnel-nav">
+          <span></span>
+          <button class="funnel-btn-next" id="next1" onclick="goToSlide(2)">Próxima →</button>
+        </div>
+      </div>
+
+      <!-- PERGUNTA 2 -->
+      <div class="funnel-slide" id="slide2">
+        <div class="funnel-question">Qual é o maior desafio hoje na gestão dos motoristas?</div>
+        <div class="funnel-hint">Selecione o que mais impacta sua operação.</div>
+        <div class="funnel-options" id="opts2">
+          <button class="funnel-option" onclick="selectOption(2,this,'Controle de horas extras e jornada')">
+            <span class="funnel-option-icon">⏱️</span>
+            <div class="funnel-option-text"><strong>Controle de horas extras e jornada</strong><span>Dificuldade em rastrear 50%, 100% e NCs</span></div>
+          </button>
+          <button class="funnel-option" onclick="selectOption(2,this,'Consumo de combustível e frota')">
+            <span class="funnel-option-icon">⛽</span>
+            <div class="funnel-option-text"><strong>Consumo de combustível e frota</strong><span>Falta visibilidade sobre km/l e eficiência</span></div>
+          </button>
+          <button class="funnel-option" onclick="selectOption(2,this,'Relatórios para gestão e diretoria')">
+            <span class="funnel-option-icon">📊</span>
+            <div class="funnel-option-text"><strong>Relatórios para gestão e diretoria</strong><span>Muito tempo montando planilhas manualmente</span></div>
+          </button>
+          <button class="funnel-option" onclick="selectOption(2,this,'Todos os anteriores')">
+            <span class="funnel-option-icon">🎯</span>
+            <div class="funnel-option-text"><strong>Todos os anteriores</strong><span>A operação precisa de uma solução completa</span></div>
+          </button>
+        </div>
+        <div class="funnel-nav">
+          <button class="funnel-btn-back" onclick="goToSlide(1)">← Voltar</button>
+          <button class="funnel-btn-next" id="next2" onclick="goToSlide(3)">Próxima →</button>
+        </div>
+      </div>
+
+      <!-- PERGUNTA 3 -->
+      <div class="funnel-slide" id="slide3">
+        <div class="funnel-question">Como você gerencia os dados dos motoristas hoje?</div>
+        <div class="funnel-hint">Queremos entender seu processo atual.</div>
+        <div class="funnel-options" id="opts3">
+          <button class="funnel-option" onclick="selectOption(3,this,'Planilhas Excel / Google Sheets')">
+            <span class="funnel-option-icon">📋</span>
+            <div class="funnel-option-text"><strong>Planilhas Excel / Google Sheets</strong><span>Controle manual, propenso a erros</span></div>
+          </button>
+          <button class="funnel-option" onclick="selectOption(3,this,'Sistema legado ou ERP')">
+            <span class="funnel-option-icon">🖥️</span>
+            <div class="funnel-option-text"><strong>Sistema legado ou ERP</strong><span>Solução atual não atende todas as necessidades</span></div>
+          </button>
+          <button class="funnel-option" onclick="selectOption(3,this,'Sem sistema, processo manual')">
+            <span class="funnel-option-icon">📝</span>
+            <div class="funnel-option-text"><strong>Sem sistema, processo manual</strong><span>Anotações e controles dispersos</span></div>
+          </button>
+        </div>
+        <div class="funnel-nav">
+          <button class="funnel-btn-back" onclick="goToSlide(2)">← Voltar</button>
+          <button class="funnel-btn-next" id="next3" onclick="showResult()">Ver Resultado →</button>
+        </div>
+      </div>
+
+      <!-- RESULTADO -->
+      <div class="funnel-slide" id="slideResult">
+        <div class="funnel-result">
+          <div class="funnel-result-icon">🚀</div>
+          <div class="funnel-result-title">O SIGCORJ é a solução certa para você!</div>
+          <div class="funnel-result-sub" id="resultText">Com base nas suas respostas, identificamos que o SIGCORJ pode transformar sua operação. Clique abaixo e fale agora com um especialista no WhatsApp.</div>
+          <a id="wppLink" href="#" target="_blank" class="funnel-wpp-btn">
+            <svg class="funnel-wpp-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 3C8.82 3 3 8.82 3 16c0 2.56.72 4.94 1.96 6.97L3 29l6.27-1.93A12.93 12.93 0 0016 29c7.18 0 13-5.82 13-13S23.18 3 16 3z" fill="#fff" fill-opacity=".15"/>
+              <path d="M16 4.5C9.65 4.5 4.5 9.65 4.5 16c0 2.44.71 4.71 1.93 6.62l-1.3 4.75 4.89-1.28A11.45 11.45 0 0016 27.5c6.35 0 11.5-5.15 11.5-11.5S22.35 4.5 16 4.5zm5.75 16.18c-.24.67-1.38 1.28-1.9 1.36-.47.07-1.06.1-1.72-.11-.4-.12-.9-.29-1.55-.57-2.73-1.18-4.51-3.93-4.65-4.12-.14-.18-1.12-1.49-1.12-2.84 0-1.35.71-2.01 1-2.3.28-.3.6-.37.8-.37.2 0 .4.01.57.01.19 0 .44-.07.69.52.25.6.86 2.1.93 2.25.08.15.13.33.03.53-.1.2-.16.32-.3.49-.15.17-.31.39-.44.52-.14.14-.29.29-.12.57.16.28.73 1.2 1.56 1.94 1.07.96 1.97 1.26 2.26 1.4.28.14.45.12.61-.07.17-.19.72-.83.91-1.12.19-.28.38-.24.64-.14.26.1 1.65.78 1.93.92.28.14.47.21.54.32.07.12.07.67-.17 1.34z" fill="#fff"/>
+            </svg>
+            Falar no WhatsApp agora
+          </a>
+          <br>
+          <button class="funnel-restart" onclick="restartFunnel()">Refazer o questionário</button>
+        </div>
+      </div>
+
+    </div><!-- /funnel-card -->
+  </div><!-- /funnel-wrap -->
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="cta">
+  <div class="cta-inner">
+    <div class="section-tag" style="display:inline-block;margin-bottom:16px">Pronto para começar?</div>
+    <h2>Sua operação merece uma <span class="cta-highlight">gestão inteligente.</span></h2>
+    <p>Solicite uma demonstração do SIGCORJ e veja como transformar dados de jornada em decisões estratégicas para sua empresa.</p>
+    <div class="cta-btns">
+      <a href="https://gabrieljoseencaixe.github.io/sigcorj/" target="_blank" class="btn-primary">🚀 Acessar o Sistema</a>
+      <a href="https://wa.me/5519990068392?text=Ol%C3%A1%2C+gostaria+de+solicitar+uma+demonstra%C3%A7%C3%A3o+do+SIGCORJ." target="_blank" class="btn-secondary" style="background:rgba(37,211,102,0.1);border-color:rgba(37,211,102,0.3);color:#25D366">💬 Falar no WhatsApp</a>
+    </div>
+    <p style="margin-top:24px;font-size:12px;color:var(--gray-3)">✓ Dados salvos na nuvem &nbsp;·&nbsp; ✓ Acesso multi-dispositivo &nbsp;·&nbsp; ✓ Suporte incluído</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div style="display:flex;align-items:center;gap:10px">
+    <svg width="28" height="28" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <rect x="15" y="15" width="70" height="70" rx="12" transform="rotate(45 50 50)" fill="#1a9fe0"/>
+      <rect x="22" y="22" width="56" height="56" rx="8" transform="rotate(45 50 50)" fill="#0f2044"/>
+      <polygon points="28,50 50,28 50,40 72,40 72,60 50,60 50,72" fill="#1a9fe0"/>
+    </svg>
+    <div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:800;color:var(--blue-bright);letter-spacing:1.5px">SIGCORJ</div>
+    </div>
+  </div>
+  <p>Sistema Integrado de Governança e Controle de Jornada · © 2026 SIGCORJ</p>
+  <a href="https://gabrieljoseencaixe.github.io/sigcorj/" target="_blank" style="font-size:12px;color:var(--blue-bright);text-decoration:none;font-weight:600">Acessar Sistema →</a>
+</footer>
+<script>
+// ── FUNIL DE VENDAS ──
+const answers = { q1: '', q2: '', q3: '' };
+
+function selectOption(step, el, value) {
+  const container = document.getElementById('opts' + step);
+  container.querySelectorAll('.funnel-option').forEach(b => b.classList.remove('selected'));
+  el.classList.add('selected');
+  answers['q' + step] = value;
+  const nextBtn = document.getElementById('next' + step);
+  nextBtn.classList.add('enabled');
+}
+
+function goToSlide(num) {
+  document.querySelectorAll('.funnel-slide').forEach(s => s.classList.remove('active'));
+  document.getElementById('slide' + num).classList.add('active');
+  // Progress dots
+  [1,2,3].forEach(i => {
+    const dot = document.getElementById('dot' + i);
+    const line = document.getElementById('line' + i);
+    dot.classList.remove('active','done');
+    if (line) line.classList.remove('done');
+    if (i < num) { dot.classList.add('done'); dot.innerHTML = '✓'; if (line) line.classList.add('done'); }
+    else if (i === num) { dot.classList.add('active'); dot.innerHTML = i; }
+    else { dot.innerHTML = i; }
+  });
+}
+
+function showResult() {
+  document.querySelectorAll('.funnel-slide').forEach(s => s.classList.remove('active'));
+  document.getElementById('slideResult').classList.add('active');
+  // Mark all done
+  [1,2,3].forEach(i => {
+    const dot = document.getElementById('dot' + i);
+    const line = document.getElementById('line' + i);
+    dot.classList.remove('active');
+    dot.classList.add('done');
+    dot.innerHTML = '✓';
+    if (line) line.classList.add('done');
+  });
+
+  // Mensagem WhatsApp personalizada
+  const msg = `Olá! Tenho interesse no SIGCORJ e quero saber mais.
+
+📌 *Meu perfil:*
+• Frota: ${answers.q1}
+• Principal desafio: ${answers.q2}
+• Gestão atual: ${answers.q3}
+
+Poderia me enviar mais informações e agendar uma demonstração?`;
+
+  const encoded = encodeURIComponent(msg);
+  // ⚠️ Substitua pelo número real com DDI: 55 + DDD + número
+  document.getElementById('wppLink').href = `https://wa.me/5519990068392?text=${encoded}`;
+
+  // Texto dinâmico do resultado
+  let extra = '';
+  if (answers.q1 === 'Mais de 50 motoristas') extra = 'Para uma operação do seu porte, o SIGCORJ oferece dashboards consolidados e comparativos avançados. ';
+  else if (answers.q1 === '16 a 50 motoristas') extra = 'Para frotas médias como a sua, o SIGCORJ entrega controle total com zero complexidade. ';
+  else extra = 'Mesmo para frotas menores, o SIGCORJ elimina planilhas e gera inteligência operacional real. ';
+  document.getElementById('resultText').textContent = extra + 'Clique abaixo e fale agora com um especialista no WhatsApp — sem compromisso.';
+}
+
+function restartFunnel() {
+  answers.q1 = answers.q2 = answers.q3 = '';
+  document.querySelectorAll('.funnel-option').forEach(b => b.classList.remove('selected'));
+  document.querySelectorAll('.funnel-btn-next').forEach(b => b.classList.remove('enabled'));
+  goToSlide(1);
+}
+</script>
+</body>
+</html>
